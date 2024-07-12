@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              clifford: "#da373d",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      .hideModal {
+        display: none;
+        /* Hide the modal by default */
+      }
+
+      .showModal {
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Headers -->
+    <div class="flex flex-col sticky top-0 z-10">
+      <div class="h-[64px] w-full bg-white border-b-[1px] boder-b-[#f6f6f6]">
+        <div
+          class="flex h-16 items-center justify-between border-b px-5 overflow-x-auto"
+        >
+          <div class="flex items-center gap-1">
+            <a
+              class="rounded-lg outline-none ring-2 ring-transparent focus-visible:ring-blue-400 max-lg:hidden"
+              aria-label="Go to dashboard home page"
+            >
+              <img src="../assets/circle.svg" />
+            </a>
+            <div class="flex items-center" style="opacity: 1">
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+                class="flex-shrink-0 max-lg:hidden"
+                xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
+              >
+                <path
+                  d="M10 2L6 14"
+                  stroke="#B7B8C2"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                ></path>
+              </svg>
+              <div>
+                <div
+                  class="cl-rootBox relative w-full cl-organizationSwitcher-root 🔒️ cl-internal-nfscg9"
+                >
+                  <button
+                    class="cl-organizationSwitcherTrigger cl-button block w-full rounded-lg border border-transparent focus:outline-none bg-clip-padding hover:bg-surface-100 focus:bg-surface-100 focus-visible:bg-transparent outline-none ring-2 ring-transparent focus-visible:ring-blue-400 h-8 pl-1.5 pr-3 flex items-center !text-primary *:text-primary hover:!text-primary 🔒️ cl-internal-6ese5r"
+                    aria-label="Open organization switcher"
+                    aria-expanded="false"
+                    aria-haspopup="dialog"
+                    data-variant="ghost"
+                    data-color="neutral"
+                  >
+                    <span class="flex gap-2">
+                      <span
+                        class="cl-userPreviewAvatarContainer cl-userPreviewAvatarContainer__personalWorkspace 🔒️ cl-internal-1jnae1p"
+                        ><span
+                          class="cl-avatarBox cl-userPreviewAvatarBox size-5 bg-transparent 🔒️ cl-internal-14gj09i"
+                        >
+                          <img
+                            crossorigin="anonymous"
+                            srcset="
+                              https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=80  1x,
+                              https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=160 2x
+                            "
+                            src="https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=160"
+                            class="h-[22px] w-[22px] rounded-[6px]"
+                            title="Aizaz Ali"
+                            alt="Aizaz Ali" />
+                          <span class="cl-internal-y9qc9e"></span></span
+                      ></span>
+                      <span
+                        class="cl-userPreviewTextContainer cl-userPreviewTextContainer__personalWorkspace 🔒️ cl-internal-lrcdh"
+                        ><span
+                          class="cl-userPreviewMainIdentifier cl-userPreviewMainIdentifier__personalWorkspace font-book 🔒️ cl-internal-1rlsxoc"
+                          ><span class="cl-internal-19abz0e"
+                            >Personal account</span
+                          ></span
+                        ></span
+                      ></span
+                    >
+                    <svg
+                      fill="currentColor"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      class="cl-organizationSwitcherTriggerIcon hidden 🔒️ cl-internal-1h94zne"
+                    >
+                      <path
+                        fill-rule="evenodd"
+                        clip-rule="evenodd"
+                        d="M4.24 6.2a.75.75 0 0 1 1.06.04l2.698 2.906 2.45-2.655a.744.744 0 0 1 .022-.021l.25-.25a.75.75 0 1 1 1.06 1.06l-.24.24-2.989 3.239a.75.75 0 0 1-1.1.001L4.2 7.26A.75.75 0 0 1 4.24 6.2Z"
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <img src="../assets/slash.svg" alt="" />
+
+                <button
+                  type="button"
+                  id="radix-:r1c:"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  data-state="closed"
+                  class="select-none flex max-w-[16.875rem] h-8 w-full items-center justify-between gap-2.5 rounded-lg border-x border-transparent pl-2.5 pr-3 font-book ring-2 ring-transparent transition-colors hover:bg-surface-100 focus:outline-none focus:ring-blue-400 aria-expanded:bg-surface-100"
+                >
+                  <div class="text-secondary">
+                    <img
+                      src="../assets/appstore.svg"
+                      class="w-[20px] h-[20px]"
+                      alt=""
+                    />
+                  </div>
+                  <span class="block flex-1 truncate text-left">Testing</span>
+                </button>
+              </div>
+              <img src="../assets/slash.svg" alt="" />
+              <div
+                class="text-center [--badge-color-primary:theme(colors.orange.500)] [--badge-color-secondary:theme(colors.orange.600/0.1)] [--badge-ring-color:theme(colors.orange.500/0.1)] [--line-color:theme(colors.orange.400)] dark:[--badge-color-primary:theme(colors.orange.600)] dark:[--line-color:theme(colors.orange.500)]"
+              >
+                <button
+                  type="button"
+                  id="radix-:r1e:"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                  data-state="closed"
+                  class="select-none group inline-flex h-8 items-center gap-2.5 rounded-lg pl-2.5 pr-2 font-light text-[14px] capitalize text-[--badge-color-primary] outline-none ring-2 ring-transparent transition-colors hover:bg-[--badge-color-secondary] focus-visible:ring-blue-400 aria-expanded:bg-[--badge-color-secondary]"
+                >
+                  <img
+                    src="../assets/check-circle.svg"
+                    alt=""
+                    height="w-[20px] h-[20px]"
+                  />
+                  development
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M4.40156 6L8.00156 10L11.6016 6"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    ></path>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="flex items-center gap-4">
+            <button
+              type="button"
+              aria-haspopup="dialog"
+              aria-expanded="false"
+              aria-controls="radix-:r1g:"
+              data-state="closed"
+              class="text-tertiary hover:text-primary"
+            >
+              <img
+                src="../assets/greater.svg"
+                class="h-[40px] w-[40px]"
+                alt=""
+              />
+            </button>
+            <div
+              class="cl-rootBox relative flex w-full animate-[fade-in_0.2s_ease-out] cl-userButton-root 🔒️ cl-internal-nfscg9"
+            >
+              <button
+                class="cl-userButtonTrigger cl-button after:absolute after:inset-0 🔒️ cl-internal-awd27h"
+                aria-label="Open user button"
+                aria-expanded="false"
+                aria-haspopup="dialog"
+                data-variant="roundWrapper"
+                data-color="primary"
+              >
+                <span class="cl-userButtonBox 🔒️ cl-internal-2z8hkq"
+                  ><span
+                    class="cl-avatarBox cl-userButtonAvatarBox 🔒️ cl-internal-1j7ahlv"
+                    ><img
+                      crossorigin="anonymous"
+                      srcset="
+                        https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=80  1x,
+                        https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=160 2x
+                      "
+                      src="https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=160"
+                      class="w-[26px] h-[26px] rounded-full"
+                      title="Aizaz Ali"
+                      alt="Aizaz Ali" /><span
+                      class="cl-internal-gpirto"
+                    ></span></span
+                ></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flex items-center justify-between px-5 flex-1 gap-4 py-2 w-full boder-b bg-[#f5f5f5] border-b-[1px] boder-b-[#f6f6f6]"
+      >
+        <div class="shrink-0">
+          <nav aria-label="Breadcrumbs">
+            <ol
+              class="flex flex-wrap items-center gap-2 text-sm font-book text-secondary"
+            >
+              <li
+                class="inline-flex items-center text-[#5e5e6e] gap-[inherit] last:text-primary [&amp;>[data-chevron]]:first-of-type:hidden"
+              >
+                <div data-chevron="true" class="shrink-0 text-tertiary">
+                  <svg
+                    fill="none"
+                    fill-opacity="10"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="shrink-0 overflow-visible stroke-[1.25] size-4"
+                    aria-hidden="true"
+                    data-icon=""
+                    data-size="sm"
+                    viewBox="0 0 20 20"
+                  >
+                    <use href="#clerk-ui-icon__chevron-right-legacy"></use>
+                  </svg>
+                </div>
+                <a
+                  class="hover:text-primary"
+                  href="/apps/app_2iTrjto6Kszl3lrSULwGqxNK22V/instances/ins_2iTrjxkBq4rwLPt3WmHXuHAgOiH"
+                  >Testing</a
+                >
+              </li>
+              <li
+                class="inline-flex items-center gap-[inherit] last:text-primary [&amp;>[data-chevron]]:first-of-type:hidden"
+              >
+                <div data-chevron="true" class="shrink-0 text-tertiary">
+                  <img
+                    src="../assets/chevron-right-svgrepo-com.svg"
+                    class="w-[15px] h-[15px]"
+                  />
+                </div>
+                Users
+              </li>
+            </ol>
+          </nav>
+        </div>
+        <div class="shrink-0"></div>
+      </div>
+    </div>
+
+    <div class="w-[100vw] relative flex">
+      <!-- sidebar -->
+      <div
+        class="hidden md:flex fixed top-[106px] h-full overflow-y-scroll left-0 z-5 md:w-[270px] lg:flex-col bg-red-800 z-10"
+      >
+        <div
+          class="flex grow flex-col h-[100vh] gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-3 py-5"
+        >
+          <span
+            class="group flex h-[34px] items-center justify-between rounded-md pl-3 pr-[0.9375rem] bg-gray-50 dark:text-[#2a2a2a]"
+            ><span class="flex items-center justify-between gap-2.5"
+              ><span class="text-balck"> <img src="../assets/user.svg" /> </span
+              ><span class="flex items-center gap-2 text-[14px] font-medium"
+                >Users</span
+              ></span
+            >
+          </span>
+        </div>
+        <div
+          class="flex grow flex-col h-[100vh] gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-3 py-5"
+        >
+          <span
+            class="group flex h-[34px] items-center justify-between rounded-md pl-3 pr-[0.9375rem] bg-gray-50 dark:text-[#2a2a2a]"
+            ><span class="flex items-center justify-between gap-2.5"
+              ><span class="text-balck"> <img src="../assets/user.svg" /> </span
+              ><span class="flex items-center gap-2 text-[14px] font-medium"
+                >Users</span
+              ></span
+            >
+          </span>
+        </div>
+        <div
+          class="flex grow flex-col h-[100vh] gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-3 py-5"
+        >
+          <a href="./dashboard/settings.html">
+            <span
+              class="group flex h-[34px] items-center justify-between rounded-md pl-3 pr-[0.9375rem] bg-gray-50 dark:text-[#2a2a2a]"
+              ><span class="flex items-center justify-between gap-2.5"
+                ><span class="text-balck">
+                  <img src="../assets/setting.svg" /> </span
+                ><span class="flex items-center gap-2 text-[14px] font-medium"
+                  >Settings</span
+                ></span
+              >
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right content section -->
+      <div
+        class="md:pl-[330px] relative w-full h-full overflow-y-scroll border-l border-gray-200 md:py-12 md:pr-10"
+      >
+        <div class="min-w-[28rem] space-y-8">
+          <div class="relative flex items-start justify-between gap-4">
+            <div class="flex w-full max-w-[80ch] flex-col gap-3">
+              <div class="w-full space-y-2">
+                <h2 class="truncate text-2xl font-medium tracking-tight">
+                  Users
+                </h2>
+                <p class="truncate text-[16px] text-secondary">
+                  View and manage users
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <section class="flex flex-col gap-4">
+            <!-- header section search -->
+            <header
+              class="flex flex-wrap items-center justify-between gap-x-6 gap-y-3"
+            >
+              <div class="flex items-center gap-3">
+                <div class="lg:min-w-[280px]">
+                  <div
+                    class="relative"
+                    type="button"
+                    aria-haspopup="dialog"
+                    aria-expanded="false"
+                    aria-controls="radix-:r8t:"
+                    data-state="closed"
+                  >
+                    <div
+                      class="relative flex py-[6px] self-start rounded flex-row rounded shadow shadow-black/[0.08] ring-1 ring-gray-300 transition focus-within:ring-[0.1875rem] focus-within:ring-[--input-ring-color] focus-within:ring-offset-1 focus-within:ring-offset-[--input-border-color-focus] [--input-pl:theme(spacing.8)] [--input-border-color:theme(colors.black/0.1)] dark:[--input-border-color:theme(colors.white/0.12)] [--input-border-color-focus:theme(colors.black/0.15)] [--input-ring-color:theme(colors.black/0.08)]"
+                    >
+                      <input
+                        type="search"
+                        class="flex-1 appearance-none truncate rounded-inherit bg-transparent px-[--input-px] py-[--input-py] pl-[--input-pl] text-base font-normal text-primary outline-none placeholder:text-[14px] [&amp;::-webkit-search-cancel-button]:hidden"
+                        placeholder="Search"
+                        min="3"
+                        value=""
+                      />
+                      <div
+                        class="absolute left-2.5 top-1/2 -translate-y-1/2 text-tertiary"
+                      >
+                        <img
+                          src="../assets/search.svg"
+                          alt=""
+                          class="w-[15px] h-[15px]"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex-shrink-0">
+                  <button
+                    class="group relative inline-flex select-none items-center justify-center rounded bg-[--button-color-bg] font-medium outline-none transition before:bg-[radial-gradient(75%_75%_at_center_top,theme(colors.white/20%),transparent)] before:transition after:transition ring-[0.1875rem] ring-transparent ring-offset-[0.0625rem] ring-offset-[--button-color-border] focus-visible:ring-[--button-color-ring] overflow-hidden px-3 py-1.5 text-base [--button-color-border:theme(colors.black/0.15)] [--button-color-bg:theme(colors.white)] [--button-color-icon:theme(textColor.tertiary)] [--button-color-icon-hover:theme(textColor.primary)] [--button-color-ring:theme(colors.black/0.08)] [--button-color-text:theme(textColor.primary)] shadow shadow-black/[0.08] transition before:absolute before:inset-0 before:rounded-inherit before:bg-gradient-to-b before:from-black/0 before:from-50% before:to-black/[0.02] before:transition-opacity hover:[--button-color-bg:theme(colors.gray.50)]"
+                    type="button"
+                    role="combobox"
+                    aria-controls="radix-:r8v:"
+                    aria-expanded="false"
+                    aria-autocomplete="none"
+                    dir="ltr"
+                    data-state="closed"
+                  >
+                    <span class="inline-flex w-full"
+                      ><span
+                        class="inline-flex w-full items-center gap-1.5 whitespace-nowrap text-[--button-color-text] drop-shadow-[--button-text-shadow] transition [--button-height:calc((theme(spacing.3)+theme(fontSize.base[1].lineHeight))*-1)] justify-center"
+                        style="transform: translateY(0%) translateZ(0px)"
+                        ><span class="flex items-center gap-1.5">
+                          <span class="font-book text-gray-500 font-[400]"
+                            >Sort by:</span
+                          >
+                          <span style="pointer-events: none">Joined</span></span
+                        ><span
+                          class="text-[--button-color-icon] transition-colors group-hover:text-[--button-color-icon-hover]"
+                        >
+                          <img
+                            src="../assets/chevron-down.svg"
+                            class="w-[15px] h-[15px]"
+                            alt=""
+                          /> </span></span
+                    ></span>
+                  </button>
+                </div>
+              </div>
+              <div class="max-h-8 flex-shrink-0">
+                <button
+                  onclick="showModal()"
+                  class="group relative inline-flex select-none items-center justify-center rounded bg-[#6c47ff] font-light outline-none transition before:bg-[radial-gradient(75%_75%_at_center_top,theme(colors.white/20%),transparent)] before:transition after:transition ring-[0.1875rem] ring-transparent ring-offset-[0.0625rem] ring-offset-[--button-color-border] focus-visible:ring-[--button-color-ring] overflow-hidden px-3 py-1.5 text-base [--button-color-border:--button-color-bg] [--button-color-bg:theme(colors.purple.500)] [--button-color-icon:theme(colors.white/0.8)] [--button-color-icon-hover:currentColor] [--button-color-ring:theme(colors.purple.500/0.2)] [--button-color-text:theme(colors.white)] [--button-text-shadow:0px_1px_1px_theme(colors.purple.700)] relative shadow-[inset_0px_1px_0px_theme(colors.white/8%),inset_0px_-1px_0px_theme(colors.white/4%),0px_0px_0px_1px_theme(colors.purple.500),0px_2px_2px_-1px_theme(colors.purple.900/24%),0px_4px_4px_-2px_theme(colors.purple.900/12%)] before:absolute before:inset-0 before:rounded-inherit before:transition-opacity hover:before:opacity-25"
+                  type="button"
+                  aria-haspopup="dialog"
+                  aria-expanded="false"
+                  aria-controls="radix-:r90:"
+                  data-state="closed"
+                >
+                  <span class="inline-flex w-full"
+                    ><span
+                      class="inline-flex w-full items-center gap-1.5 whitespace-nowrap text-[--button-color-text] drop-shadow-[--button-text-shadow] transition [--button-height:calc((theme(spacing.3)+theme(fontSize.base[1].lineHeight))*-1)] justify-center"
+                      style="transform: translateY(0%) translateZ(0px)"
+                    >
+                      <span class="flex items-center gap-1.5">Create user</span>
+                    </span>
+                  </span>
+                </button>
+              </div>
+            </header>
+
+            <div class="bg-red-400 hideModal" id="modal-container">
+              <div
+                class="relative z-10 bg-red-400"
+                aria-labelledby="modal-title"
+                role="dialog"
+                aria-modal="true"
+              >
+                <div
+                  class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
+                  aria-hidden="true"
+                ></div>
+
+                <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                  <div
+                    class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+                  >
+                    <div
+                      class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
+                    >
+                      <div class="bg-gray-100 pt-5">
+                        <div
+                          class="sm:flex flex justify-between sm:items-start round-[6px] px-[15px]"
+                        >
+                          <div class="flex gap-5 px-4">
+                            <h1>Create user</h1>
+                            <div
+                              class="text-center mb-[10px] [--badge-color-primary:theme(colors.orange.500)] [--badge-color-secondary:theme(colors.orange.600/0.1)] [--badge-ring-color:theme(colors.orange.500/0.1)] [--line-color:theme(colors.orange.400)] dark:[--badge-color-primary:theme(colors.orange.600)] dark:[--line-color:theme(colors.orange.500)]"
+                            >
+                              <button
+                                type="button"
+                                id="radix-:r1e:"
+                                aria-haspopup="menu"
+                                aria-expanded="false"
+                                data-state="closed"
+                                class="select-none group inline-flex h-8 items-center gap-2.5 rounded-lg pl-2.5 pr-2 font-light text-[14px] capitalize text-[--badge-color-primary] outline-none ring-2 ring-transparent transition-colors hover:bg-[--badge-color-secondary] focus-visible:ring-blue-400 aria-expanded:bg-[--badge-color-secondary]"
+                              >
+                                development
+                                <svg
+                                  width="16"
+                                  height="16"
+                                  viewBox="0 0 16 16"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M4.40156 6L8.00156 10L11.6016 6"
+                                    stroke="currentColor"
+                                    stroke-width="1.5"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  ></path>
+                                </svg>
+                              </button>
+                            </div>
+                          </div>
+
+                          <div onclick="hideModal()" class="cursor-pointer">
+                            <img
+                              src="../assets/cross.svg"
+                              alt=""
+                              class="h-[20px] w-[20px]"
+                            />
+                          </div>
+                        </div>
+                        <div class="rounded-[10px]">
+                          <form autocomplete="off" id="create_user_form">
+                            <div
+                              class="group/dialog-content overflow-hidden rounded-lg bg-white shadow shadow-black/[.06] ring-1 ring-black/[0.06]"
+                            >
+                              <section
+                                data-id="section"
+                                class="space-y-5 px-5 pb-6 pt-4.5"
+                              >
+                                <div class="flex justify-between gap-5"></div>
+                                <div class="css-l0aj3c">
+                                  <div class="w-full">
+                                    <div
+                                      role="group"
+                                      class="chakra-form-control css-1kxonj9"
+                                    >
+                                      <div class="flex justify-between">
+                                        <div class="relative flex">
+                                          <div class="flex flex-col">
+                                            <label
+                                              for="field-:r28:"
+                                              id="field-:r28:-label"
+                                              class="mb-[10px]"
+                                              >Email</label
+                                            >
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        role="group"
+                                        class="chakra-form-control css-1kxonj9"
+                                      >
+                                        <input
+                                          name="email_address"
+                                          placeholder="name@example.com"
+                                          type="email"
+                                          autocomplete="off"
+                                          autocapitalize="off"
+                                          id="field-:r29:"
+                                          class="w-full border-[1px] border-gray-200 h-[42px] px-[10px]"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="css-l0aj3c">
+                                  <div class="w-full">
+                                    <div
+                                      role="group"
+                                      class="chakra-form-control css-1kxonj9"
+                                    >
+                                      <div class="flex justify-between">
+                                        <div class="relative flex">
+                                          <div class="flex flex-col">
+                                            <label
+                                              for="field-:r2a:"
+                                              id="field-:r2a:-label"
+                                              class="chakra-form__label css-1ut6arx"
+                                              >Password</label
+                                            >
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        role="group"
+                                        class="chakra-form-control css-1kxonj9"
+                                      >
+                                        <input
+                                          name="password"
+                                          type="password"
+                                          autocomplete="off"
+                                          autocapitalize="off"
+                                          id="field-:r2b:"
+                                          class="w-full border-[1px] border-gray-200 h-[42px] px-[10px]"
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="w-full">
+                                  <div>
+                                    <div class="css-70qvj9">
+                                      <label
+                                        class="chakra-checkbox css-1577qb8"
+                                      >
+                                        <input
+                                          class="border-[1px] border-gray-200 h-[20px] w-[20px]"
+                                          type="checkbox"
+                                          name="skip_password_checks"
+                                          aria-disabled="false"
+                                          value=""
+                                          style="
+                                            border: 0px;
+                                            clip: rect(0px, 0px, 0px, 0px);
+                                            height: 1px;
+                                            width: 1px;
+                                            margin: -1px;
+                                            padding: 0px;
+                                            overflow: hidden;
+                                            white-space: nowrap;
+                                            position: absolute;
+                                          "
+                                        /><span
+                                          class="chakra-checkbox__control css-hckgsm"
+                                          aria-hidden="true"
+                                        ></span
+                                        ><span
+                                          class="chakra-checkbox__label css-b4kair"
+                                        >
+                                          <div class="ml-2 flex">
+                                            <p
+                                              class="text-[18px] text-gray-700"
+                                            >
+                                              Ignore password policies
+                                            </p>
+                                          </div>
+                                        </span></label
+                                      >
+                                    </div>
+                                    <p class="text-[16px] text-gray-500">
+                                      If checked, password policies will not be
+                                      enforced on this password.
+                                    </p>
+                                  </div>
+                                </div>
+                              </section>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                      <div
+                        class="bg-gray-100 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6"
+                      >
+                        <div
+                          class="flex items-center justify-end gap-3 px-5 py-4"
+                        >
+                          <button
+                            class="group relative inline-flex select-none items-center justify-center rounded bg-[--button-color-bg] font-medium outline-none transition before:bg-[radial-gradient(75%_75%_at_center_top,theme(colors.white/20%),transparent)] before:transition after:transition ring-[0.1875rem] ring-transparent ring-offset-[0.0625rem] ring-offset-[--button-color-border] focus-visible:ring-[--button-color-ring] overflow-hidden px-3 py-1.5 text-base [--button-color-border:--button-color-bg] [--button-color-bg:theme(colors.purple.500)] [--button-color-icon:theme(colors.white/0.8)] [--button-color-icon-hover:currentColor] [--button-color-ring:theme(colors.purple.500/0.2)] [--button-color-text:theme(colors.white)] [--button-text-shadow:0px_1px_1px_theme(colors.purple.700)] relative shadow-[inset_0px_1px_0px_theme(colors.white/8%),inset_0px_-1px_0px_theme(colors.white/4%),0px_0px_0px_1px_theme(colors.purple.500),0px_2px_2px_-1px_theme(colors.purple.900/24%),0px_4px_4px_-2px_theme(colors.purple.900/12%)] before:absolute before:inset-0 before:rounded-inherit before:transition-opacity hover:before:opacity-25"
+                            type="submit"
+                            aria-label="Create user"
+                          >
+                            <span class="inline-flex w-full"
+                              ><span
+                                class="inline-flex w-full items-center gap-1.5 whitespace-nowrap text-[--button-color-text] drop-shadow-[--button-text-shadow] transition [--button-height:calc((theme(spacing.3)+theme(fontSize.base[1].lineHeight))*-1)] justify-center"
+                                style="
+                                  transform: translateY(0%) translateZ(0px);
+                                "
+                                ><span class="flex items-center gap-1.5"
+                                  >Create</span
+                                ></span
+                              ></span
+                            >
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- table -->
+
+            <div>
+              <section
+                class="relative isolate flex flex-col overflow-hidden rounded-2xl bg-surface-100 p-1"
+              >
+                <div class="relative isolate order-1 -mt-1">
+                  <div class="relative overflow-x-auto">
+                    <table class="min-w-full table-fixed whitespace-nowrap">
+                      <thead>
+                        <tr class="bg-gray-100">
+                          <th
+                            class="w-45% text-left text-sm font-medium text-secondary px-4 py-3"
+                          >
+                            User
+                          </th>
+                          <th
+                            class="text-left text-sm font-medium text-secondary px-4 py-3"
+                          >
+                            Last signed in
+                          </th>
+                          <th
+                            class="text-left text-sm font-medium text-secondary px-4 py-3"
+                          >
+                            Joined
+                          </th>
+                          <th
+                            class="w-8 text-left text-sm font-medium text-secondary px-4 py-3 sr-only"
+                          >
+                            Actions
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody
+                        class="relative border border-gray-100 rounded-xl shadow-md"
+                      >
+                        <tr
+                          class="group bg-surface-200 hover:bg-gray-25 border-b-[1px] border-b-gray-150"
+                        >
+                          <td class="px-4 py-4 text-left w-full">
+                            <div class="flex justify-center items-center">
+                              <div
+                                class="flex min-h-[20rem] flex-col items-center justify-center ml-[200px] gap-2 p-12 text-center"
+                              >
+                                <span
+                                  class="order-1 pb-4 text-tertiary [&>svg]:size-8"
+                                  >
+                                  <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="1.5"
+                                    stroke="#9394a1"
+                                    class="size-6"
+                                  >
+                                    <path
+                                      stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                                    />
+                                  </svg>
+                                </span>
+                                <span
+                                  class="order-2 text-xl font-semibold text-primary"
+                                  >No user created</span
+                                >
+                                <span class="order-3 text-base text-secondary text-[#9394a1]"
+                                  >Get started by creating a new user</span
+                                >
+                                <span class="order-4 pt-4">
+                                  <button
+                                    class="group relative inline-flex select-none items-center justify-center rounded bg-[--button-color-bg] font-medium outline-none transition before:bg-[radial-gradient(75%_75%_at_center_top,theme(colors.white/20%),transparent)] before:transition after:transition ring-[0.1875rem] ring-transparent ring-offset-[0.0625rem] ring-offset-[--button-color-border] focus-visible:ring-[--button-color-ring] overflow-hidden px-3 py-1.5 text-base [--button-color-border:--button-color-bg] [--button-color-bg:theme(colors.purple.500)] [--button-color-icon:theme(colors.white/0.8)] [--button-color-icon-hover:currentColor] [--button-color-ring:theme(colors.purple.500/0.2)] [--button-color-text:theme(colors.white)] [--button-text-shadow:0px_1px_1px_theme(colors.purple.700)] relative shadow-[inset_0px_1px_0px_theme(colors.white/8%),inset_0px_-1px_0px_theme(colors.white/4%),0px_0px_0px_1px_theme(colors.purple.500),0px_2px_2px_-1px_theme(colors.purple.900/24%),0px_4px_4px_-2px_theme(colors.purple.900/12%)] before:absolute before:inset-0 before:rounded-inherit before:transition-opacity hover:before:opacity-25"
+                                  >
+                                    <span class="inline-flex w-full"><span class="inline-flex w-full items-center gap-1.5 whitespace-nowrap text-[--button-color-text] drop-shadow-[--button-text-shadow] transition [--button-height:calc((theme(spacing.3)+theme(fontSize.base[1].lineHeight))*-1)] justify-center" style="transform: translateY(0%) translateZ(0px);">
+                                        <span class="flex items-center gap-1.5">Create User</span>
+                                    </span>
+                                  </button>
+                                </span>
+                              </div>
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showModal() {
+        document.getElementById("modal-container").classList.add("showModal");
+        document
+          .getElementById("modal-container")
+          .classList.remove("modal-container");
+      }
+
+      function hideModal() {
+        document
+          .getElementById("modal-container")
+          .classList.add("modal-container");
+        document
+          .getElementById("modal-container")
+          .classList.remove("showModal");
+      }
+    </script>
+  </body>
+</html>
