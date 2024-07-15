@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- cdn -->
+  <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>Clerk.com</title>
+</head>
+
+<body>
+  <header>
+    <!-- read-more -->
+    <div class="bg-dark flex items-stretch justify-center space-x-3 py-2 text-white">
+      <span class="font-semibold">
+        Clerk raises $30M Series B from CRV and Stripe
+      </span>
+      <span class="font-thin">|</span>
+      <div class="flex justify-center items-center text-white">
+        <a href="#" class="font-semibold">Read More</a>
+        <img class="w-4 h-4 cursor-pointer" src="assets/chevron-right-svgrepo-com.svg" alt="svg" />
+      </div>
+    </div>
+    <!-- Navbar -->
+    <nav class="px-16 py-5 bg-bgNav border-b">
+      <div class="flex justify-between items-center">
+        <!-- LHS -->
+        <div class="flex items-center space-x-8">
+          <img class="w-20" src="assets/siginin-logo.avif" alt="" />
+          <ul class="hidden lg:flex items-center space-x-4">
+            <li class="flex items-center space-x-2 cursor-pointer">
+              <a class="" href="#">Product</a><img class="w-4" src="assets/chevron-down.svg" alt="" />
+            </li>
+
+            <li><a href="#">Docs</a></li>
+            <li><a href="#">Changelog</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li class="flex items-center space-x-2 cursor-pointer">
+              <a class="" href="#">Company</a><img class="w-4" src="assets/chevron-down.svg" alt="" />
+            </li>
+          </ul>
+        </div>
+        <!-- RHS -->
+        <div class="flex items-center space-x-4">
+          <a class="hidden lg:block font-medium" href="./signin.html" class="">Sign In</a>
+          <a href="./dashboard/users_list.html">
+            <button class="hidden lg:flex items-center bg-dark text-bgNav font-medium rounded-md py-2 px-4">
+              Get started
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+          </a>
+          <div class="lg:hidden">
+            <button>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 9h16.5m-16.5 6.75h16.5" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <!-- Hero Section -->
+    <section class="bg-[url('/assets/circuit.jpeg')] bg-cover bg-center bg-no-repeat min-h-[80vh] p-1">
+      <div class="mx-8 mt-24 p-2">
+        <div class="flex flex-wrap justify-center items-center w-[90%] md:w-[80%] lg:w-[75%] mx-auto">
+          <h1 class="text-dark font-black text-3xl md:text-4xl lg:text-7xl text-center">
+            The most comprehensive User Management Platform
+          </h1>
+        </div>
+        <div class="flex flex-wrap justify-center items-center w-[90%] md:w-[70%] lg:w-[60%] mx-auto my-6">
+          <h3 class="text-paragraph text-center text-base md:text-xl lg:text-2xl">
+            Need more than just a sign-in box? Clerk is a complete suite of
+            embeddable UIs, flexible APIs, and admin dashboards to
+            authenticate and manage your users.
+          </h3>
+        </div>
+        <div class="flex flex-col space-y-4 md:flex-row md:space-y-0 justify-center items-center md:space-x-8">
+          <button
+            class="py-1 px-2 bg-gradient-to-t from-headerBtnDark to-headerBtnLight text-white rounded-md hover:opacity-80">
+            Start building for free
+          </button>
+          <div class="flex items-center justify-center space-x-2">
+            <div class="flex justify-center items-center pl-1 w-6 h-6 rounded-full border border-paragraph">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6">
+                <path fill-rule="evenodd"
+                  d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
+                  clip-rule="evenodd" />
+              </svg>
+            </div>
+            <div class="flex items-center justify-center space-x-3">
+              <a class="text-black font-medium" href="#">Watch Demo</a>
+              <span class="text-paragraph">2 min</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-32 container mx-auto">
+          <div class="flex flex-col lg:flex-row lg:space-y-0 space-y-8 items-center space-x-6 justify-between">
+            <div class="w-[80%] mx-auto lg:mx-0 text-center lg:text-left lg:w-[20%]">
+              <span class="text-paragraph text-lg">Trusted by fast-growing companies around the world</span>
+            </div>
+            <div class="grid grid-cols-4 lg:grid-cols-8 gap-3">
+              <!-- 1 -->
+              <div>
+                <img src="assets/candor.656a25b6.svg" alt="" />
+              </div>
+              <!-- 2 -->
+              <div>
+                <img src="assets/inngest.fee349a7.svg" alt="" />
+              </div>
+              <!-- 3 -->
+              <div>
+                <img src="assets/cognition@2x.webp" alt="" />
+              </div>
+              <!-- 4 -->
+              <div>
+                <img src="assets/seam.1acce1ba.svg" alt="" />
+              </div>
+              <!-- 5 -->
+              <div>
+                <img src="assets/dentologie.a27684af.svg" alt="" />
+              </div>
+              <!-- 6 -->
+              <div>
+                <img src="assets/honeylove.9694cb7b.svg" alt="" />
+              </div>
+              <!-- 7 -->
+              <div>
+                <img src="assets/basehub.b95257cb.svg" alt="" />
+              </div>
+              <!-- 8 -->
+              <div>
+                <img src="assets/saasgrid.c8a32e3b.svg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Components section -->
+    <!-- <section class="bg-bgNav py-20 lg:py-32">
+        <div class="grid grid-cols-2 ml-10">
+          
+          <div class="px-6">
+            <div class="mb-20 w-[80%] space-y-6">
+              <div>
+                <h3 class="text-bodyHeadings">Clerk Components</h3>
+              </div>
+              <div class="">
+                <h1 class="text-dark font-black text-4xl">
+                  Pixel-perfect UIs,<br />
+                  embedded in minutes
+                </h1>
+              </div>
+              <div>
+                <p class="text-paragraph">
+                  Simply add <span class="font-black">&lt;SignIn/&gt;</span> ,
+                  <span class="font-black">&lt;SignUp/&gt;</span> ,
+                  <span class="font-black">&lt;UserButton/&gt;</span> ,
+                  <span class="font-black">&lt;UserProfile/&gt;</span> for
+                  complete user management functionality. Match to your brand
+                  with any CSS library, then deploy to your own domain — no more
+                  jarring redirects!
+                </p>
+              </div>
+            </div>
+            
+            <div class="grid grid-cols-3 gap-2">
+              <div class="relative col-span-1 row-span-2">
+                <div class="absolute top-20 -left-56">
+                  <img
+                    class="rounded-lg"
+                    src="./assets/sign-up@2xrl.0b502c97.webp"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="col-span-2 grid gap-y-8">
+                <img
+                  class="rounded-lg"
+                  src="./assets/sign-in@2xrl.72e3ee2a.webp"
+                  alt=""
+                />
+                <img
+                  class="rounded-lg"
+                  src="./assets/verify@2xrl.dafd13f9.webp"
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </section> -->
+    <section class="bg-[url('/assets/bento.webp')] bg-cover bg-no-repeat min-h-[100vh] w-full py-16 px-8">
+      <div class="container mx-auto p-6 space-y-6">
+        <div class="container mx-auto text-center">
+          <h1 class="font-black text-white text-xl md:text-3xl lg:text-4xl">
+            Everything you need for authentication
+          </h1>
+        </div>
+        <div class="md:w-[70%] lg:w-[50%] mx-auto text-center">
+          <p class="text-[#c0c1c8] text-base md:text-lg lg:text-xl">
+            Ever feel like authentication requirements change with the season?
+            Clerk keeps up with the latest trends and security best practices.
+          </p>
+        </div>
+      </div>
+      <div class="grid grid-cols-3 gap-4 p-4 mx-12 my-10">
+        <div class="bg-[#212126] min-h-[300px] rounded-lg">1</div>
+        <div class="bg-[#212126] row-span-2 rounded-lg">2</div>
+        <div class="bg-[#212126] min-h-[300px] rounded-lg">3</div>
+        <div class="bg-[#212126] min-h-[300px] rounded-lg">4</div>
+        <div class="bg-[#212126] min-h-[300px] rounded-lg">5</div>
+        <div class="bg-[#212126] row-span-2 rounded-lg">6</div>
+        <div class="bg-[#212126] min-h-[300px] rounded-lg">7</div>
+        <div class="bg-[#212126] row-span-2 rounded-lg">8</div>
+        <div class="bg-[#212126] min-h-[300px] rounded-lg">9</div>
+      </div>
+    </section>
+  </main>
+</body>
+
+</html>
