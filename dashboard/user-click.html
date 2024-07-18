@@ -1,665 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Settings</title>
-    <link rel="stylesheet" href="./s.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: "#da373d",
-            },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings</title>
+  <link rel="stylesheet" href="./s.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: "#da373d",
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <style>
-      .hideModal {
-        display: none;
-        /* Hide the modal by default */
-      }
+  <style>
+    .hideModal {
+      display: none;
+      /* Hide the modal by default */
+    }
 
-      .showModal {
-        display: block;
-      }
-    </style>
-  </head>
-  <body>
-    <!-- Headers -->
-    <div class="flex flex-col sticky top-0 z-10">
-      <div class="h-[64px] w-full bg-white border-b-[1px] boder-b-[#f6f6f6]">
-        <div
-          class="flex h-16 items-center justify-between border-b px-5 overflow-x-auto"
-        >
-          <div class="flex items-center gap-1">
-            <a
-              class="rounded-lg outline-none ring-2 ring-transparent focus-visible:ring-blue-400 max-lg:hidden"
-              aria-label="Go to dashboard home page"
-            >
-              <img src="../assets/circle.svg" />
-            </a>
-            <div class="flex items-center" style="opacity: 1">
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                class="flex-shrink-0 max-lg:hidden"
-                xmlns="http://www.w3.org/2000/svg"
-                aria-hidden="true"
-              >
-                <path
-                  d="M10 2L6 14"
-                  stroke="#B7B8C2"
-                  stroke-width="1.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                ></path>
-              </svg>
-              <div>
-                <div
-                  class="cl-rootBox relative w-full cl-organizationSwitcher-root 🔒️ cl-internal-nfscg9"
-                >
-                  <button
-                    class="cl-organizationSwitcherTrigger cl-button block w-full rounded-lg border border-transparent focus:outline-none bg-clip-padding hover:bg-surface-100 focus:bg-surface-100 focus-visible:bg-transparent outline-none ring-2 ring-transparent focus-visible:ring-blue-400 h-8 pl-1.5 pr-3 flex items-center !text-primary *:text-primary hover:!text-primary 🔒️ cl-internal-6ese5r"
-                    aria-label="Open organization switcher"
-                    aria-expanded="false"
-                    aria-haspopup="dialog"
-                    data-variant="ghost"
-                    data-color="neutral"
-                  >
-                    <span class="flex gap-2">
-                      <span
-                        class="cl-userPreviewAvatarContainer cl-userPreviewAvatarContainer__personalWorkspace 🔒️ cl-internal-1jnae1p"
-                        ><span
-                          class="cl-avatarBox cl-userPreviewAvatarBox size-5 bg-transparent 🔒️ cl-internal-14gj09i"
-                        >
-                          <img
-                            crossorigin="anonymous"
-                            srcset="
+    .showModal {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Headers -->
+  <div class="flex flex-col sticky top-0 z-10">
+    <div class="h-[64px] w-full bg-white border-b-[1px] boder-b-[#f6f6f6]">
+      <div class="flex h-16 items-center justify-between border-b px-5 overflow-x-auto">
+        <div class="flex items-center gap-1">
+          <a class="rounded-lg outline-none ring-2 ring-transparent focus-visible:ring-blue-400 max-lg:hidden"
+            aria-label="Go to dashboard home page">
+            <img src="../assets/circle.svg" />
+          </a>
+          <div class="flex items-center" style="opacity: 1">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" class="flex-shrink-0 max-lg:hidden"
+              xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M10 2L6 14" stroke="#B7B8C2" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              </path>
+            </svg>
+            <div>
+              <div class="cl-rootBox relative w-full cl-organizationSwitcher-root 🔒️ cl-internal-nfscg9">
+                <button
+                  class="cl-organizationSwitcherTrigger cl-button block w-full rounded-lg border border-transparent focus:outline-none bg-clip-padding hover:bg-surface-100 focus:bg-surface-100 focus-visible:bg-transparent outline-none ring-2 ring-transparent focus-visible:ring-blue-400 h-8 pl-1.5 pr-3 flex items-center !text-primary *:text-primary hover:!text-primary 🔒️ cl-internal-6ese5r"
+                  aria-label="Open organization switcher" aria-expanded="false" aria-haspopup="dialog"
+                  data-variant="ghost" data-color="neutral">
+                  <span class="flex gap-2">
+                    <span
+                      class="cl-userPreviewAvatarContainer cl-userPreviewAvatarContainer__personalWorkspace 🔒️ cl-internal-1jnae1p"><span
+                        class="cl-avatarBox cl-userPreviewAvatarBox size-5 bg-transparent 🔒️ cl-internal-14gj09i">
+                        <img crossorigin="anonymous" srcset="
                               https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=80  1x,
                               https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=160 2x
                             "
-                            src="https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=160"
-                            class="h-[22px] w-[22px] rounded-[6px]"
-                            title="Aizaz Ali"
-                            alt="Aizaz Ali" />
-                          <span class="cl-internal-y9qc9e"></span></span
-                      ></span>
-                      <span
-                        class="cl-userPreviewTextContainer cl-userPreviewTextContainer__personalWorkspace 🔒️ cl-internal-lrcdh"
-                        ><span
-                          class="cl-userPreviewMainIdentifier cl-userPreviewMainIdentifier__personalWorkspace font-book 🔒️ cl-internal-1rlsxoc"
-                          ><span class="cl-internal-19abz0e"
-                            >Personal account</span
-                          ></span
-                        ></span
-                      ></span
-                    >
-                    <svg
-                      fill="currentColor"
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 16 16"
-                      class="cl-organizationSwitcherTriggerIcon hidden 🔒️ cl-internal-1h94zne"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        clip-rule="evenodd"
-                        d="M4.24 6.2a.75.75 0 0 1 1.06.04l2.698 2.906 2.45-2.655a.744.744 0 0 1 .022-.021l.25-.25a.75.75 0 1 1 1.06 1.06l-.24.24-2.989 3.239a.75.75 0 0 1-1.1.001L4.2 7.26A.75.75 0 0 1 4.24 6.2Z"
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
-              </div>
-              <div class="flex items-center">
-                <img src="../assets/slash.svg" alt="" />
-
-                <button
-                  type="button"
-                  id="radix-:r1c:"
-                  aria-haspopup="menu"
-                  aria-expanded="false"
-                  data-state="closed"
-                  class="select-none flex max-w-[16.875rem] h-8 w-full items-center justify-between gap-2.5 rounded-lg border-x border-transparent pl-2.5 pr-3 font-book ring-2 ring-transparent transition-colors hover:bg-surface-100 focus:outline-none focus:ring-blue-400 aria-expanded:bg-surface-100"
-                >
-                  <div class="text-secondary">
-                    <img
-                      src="../assets/appstore.svg"
-                      class="w-[20px] h-[20px]"
-                      alt=""
-                    />
-                  </div>
-                  <span class="block flex-1 truncate text-left">Testing</span>
-                </button>
-              </div>
-              <img src="../assets/slash.svg" alt="" />
-              <div
-                class="text-center [--badge-color-primary:theme(colors.orange.500)] [--badge-color-secondary:theme(colors.orange.600/0.1)] [--badge-ring-color:theme(colors.orange.500/0.1)] [--line-color:theme(colors.orange.400)] dark:[--badge-color-primary:theme(colors.orange.600)] dark:[--line-color:theme(colors.orange.500)]"
-              >
-                <button
-                  type="button"
-                  id="radix-:r1e:"
-                  aria-haspopup="menu"
-                  aria-expanded="false"
-                  data-state="closed"
-                  class="select-none group inline-flex h-8 items-center gap-2.5 rounded-lg pl-2.5 pr-2 font-light text-[14px] capitalize text-[--badge-color-primary] outline-none ring-2 ring-transparent transition-colors hover:bg-[--badge-color-secondary] focus-visible:ring-blue-400 aria-expanded:bg-[--badge-color-secondary]"
-                >
-                  <img
-                    src="../assets/check-circle.svg"
-                    alt=""
-                    height="w-[20px] h-[20px]"
-                  />
-                  development
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 16 16"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M4.40156 6L8.00156 10L11.6016 6"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    ></path>
+                          src="https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=160"
+                          class="h-[22px] w-[22px] rounded-[6px]" title="Aizaz Ali" alt="Aizaz Ali" />
+                        <span class="cl-internal-y9qc9e"></span></span></span>
+                    <span
+                      class="cl-userPreviewTextContainer cl-userPreviewTextContainer__personalWorkspace 🔒️ cl-internal-lrcdh"><span
+                        class="cl-userPreviewMainIdentifier cl-userPreviewMainIdentifier__personalWorkspace font-book 🔒️ cl-internal-1rlsxoc"><span
+                          class="cl-internal-19abz0e">Personal account</span></span></span></span>
+                  <svg fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"
+                    class="cl-organizationSwitcherTriggerIcon hidden 🔒️ cl-internal-1h94zne">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M4.24 6.2a.75.75 0 0 1 1.06.04l2.698 2.906 2.45-2.655a.744.744 0 0 1 .022-.021l.25-.25a.75.75 0 1 1 1.06 1.06l-.24.24-2.989 3.239a.75.75 0 0 1-1.1.001L4.2 7.26A.75.75 0 0 1 4.24 6.2Z">
+                    </path>
                   </svg>
                 </button>
               </div>
             </div>
-          </div>
-          <div class="flex items-center gap-4">
-            <button
-              type="button"
-              aria-haspopup="dialog"
-              aria-expanded="false"
-              aria-controls="radix-:r1g:"
-              data-state="closed"
-              class="text-tertiary hover:text-primary"
-            >
-              <img
-                src="../assets/greater.svg"
-                class="h-[40px] w-[40px]"
-                alt=""
-              />
-            </button>
+            <div class="flex items-center">
+              <img src="../assets/slash.svg" alt="" />
+
+              <button type="button" id="radix-:r1c:" aria-haspopup="menu" aria-expanded="false" data-state="closed"
+                class="select-none flex max-w-[16.875rem] h-8 w-full items-center justify-between gap-2.5 rounded-lg border-x border-transparent pl-2.5 pr-3 font-book ring-2 ring-transparent transition-colors hover:bg-surface-100 focus:outline-none focus:ring-blue-400 aria-expanded:bg-surface-100">
+                <div class="text-secondary">
+                  <img src="../assets/appstore.svg" class="w-[20px] h-[20px]" alt="" />
+                </div>
+                <span class="block flex-1 truncate text-left">Testing</span>
+              </button>
+            </div>
+            <img src="../assets/slash.svg" alt="" />
             <div
-              class="cl-rootBox relative flex w-full animate-[fade-in_0.2s_ease-out] cl-userButton-root 🔒️ cl-internal-nfscg9"
-            >
-              <button
-                class="cl-userButtonTrigger cl-button after:absolute after:inset-0 🔒️ cl-internal-awd27h"
-                aria-label="Open user button"
-                aria-expanded="false"
-                aria-haspopup="dialog"
-                data-variant="roundWrapper"
-                data-color="primary"
-              >
-                <span class="cl-userButtonBox 🔒️ cl-internal-2z8hkq"
-                  ><span
-                    class="cl-avatarBox cl-userButtonAvatarBox 🔒️ cl-internal-1j7ahlv"
-                    ><img
-                      crossorigin="anonymous"
-                      srcset="
-                        https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=80  1x,
-                        https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=160 2x
-                      "
-                      src="https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=160"
-                      class="w-[26px] h-[26px] rounded-full"
-                      title="Aizaz Ali"
-                      alt="Aizaz Ali" /><span
-                      class="cl-internal-gpirto"
-                    ></span></span
-                ></span>
+              class="text-center [--badge-color-primary:theme(colors.orange.500)] [--badge-color-secondary:theme(colors.orange.600/0.1)] [--badge-ring-color:theme(colors.orange.500/0.1)] [--line-color:theme(colors.orange.400)] dark:[--badge-color-primary:theme(colors.orange.600)] dark:[--line-color:theme(colors.orange.500)]">
+              <button type="button" id="radix-:r1e:" aria-haspopup="menu" aria-expanded="false" data-state="closed"
+                class="select-none group inline-flex h-8 items-center gap-2.5 rounded-lg pl-2.5 pr-2 font-light text-[14px] capitalize text-[--badge-color-primary] outline-none ring-2 ring-transparent transition-colors hover:bg-[--badge-color-secondary] focus-visible:ring-blue-400 aria-expanded:bg-[--badge-color-secondary]">
+                <img src="../assets/check-circle.svg" alt="" height="w-[20px] h-[20px]" />
+                development
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M4.40156 6L8.00156 10L11.6016 6" stroke="currentColor" stroke-width="1.5"
+                    stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
               </button>
             </div>
           </div>
         </div>
-      </div>
-      <div
-        class="flex items-center justify-between px-5 flex-1 gap-4 py-2 w-full boder-b bg-[#f5f5f5] border-b-[1px] boder-b-[#f6f6f6]"
-      >
-        <div class="shrink-0">
-          <nav aria-label="Breadcrumbs">
-            <ol
-              class="flex flex-wrap items-center gap-2 text-sm font-book text-secondary"
-            >
-              <li
-                class="inline-flex items-center text-[#5e5e6e] gap-[inherit] last:text-primary [&amp;>[data-chevron]]:first-of-type:hidden"
-              >
-                <div data-chevron="true" class="shrink-0 text-tertiary">
-                  <svg
-                    fill="none"
-                    fill-opacity="10"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="shrink-0 overflow-visible stroke-[1.25] size-4"
-                    aria-hidden="true"
-                    data-icon=""
-                    data-size="sm"
-                    viewBox="0 0 20 20"
-                  >
-                    <use href="#clerk-ui-icon__chevron-right-legacy"></use>
-                  </svg>
-                </div>
-                <a
-                  class="hover:text-primary"
-                  href="/apps/app_2iTrjto6Kszl3lrSULwGqxNK22V/instances/ins_2iTrjxkBq4rwLPt3WmHXuHAgOiH"
-                  >Testing</a
-                >
-              </li>
-              <li
-                class="inline-flex items-center gap-[inherit] last:text-primary [&amp;>[data-chevron]]:first-of-type:hidden"
-              >
-                <div data-chevron="true" class="shrink-0 text-tertiary">
-                  <img
-                    src="../assets/chevron-right-svgrepo-com.svg"
-                    class="w-[15px] h-[15px]"
-                  />
-                </div>
-                Users
-              </li>
-            </ol>
-          </nav>
+        <div class="flex items-center gap-4">
+          <button type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:r1g:"
+            data-state="closed" class="text-tertiary hover:text-primary">
+            <img src="../assets/greater.svg" class="h-[40px] w-[40px]" alt="" />
+          </button>
+          <div
+            class="cl-rootBox relative flex w-full animate-[fade-in_0.2s_ease-out] cl-userButton-root 🔒️ cl-internal-nfscg9">
+            <button class="cl-userButtonTrigger cl-button after:absolute after:inset-0 🔒️ cl-internal-awd27h"
+              aria-label="Open user button" aria-expanded="false" aria-haspopup="dialog" data-variant="roundWrapper"
+              data-color="primary">
+              <span class="cl-userButtonBox 🔒️ cl-internal-2z8hkq"><span
+                  class="cl-avatarBox cl-userButtonAvatarBox 🔒️ cl-internal-1j7ahlv"><img crossorigin="anonymous"
+                    srcset="
+                        https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=80  1x,
+                        https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=160 2x
+                      "
+                    src="https://img.clerk.com/eyJ0eXBlIjoicHJveHkiLCJzcmMiOiJodHRwczovL2ltYWdlcy5jbGVyay5kZXYvb2F1dGhfZ29vZ2xlL2ltZ18yaVRyZ2FoemRNSm92Y09pc29ObWp0dkUyVEsifQ?width=160"
+                    class="w-[26px] h-[26px] rounded-full" title="Aizaz Ali" alt="Aizaz Ali" /><span
+                    class="cl-internal-gpirto"></span></span></span>
+            </button>
+          </div>
         </div>
-        <div class="shrink-0"></div>
       </div>
     </div>
-    <!-- Headers -->
+    <div
+      class="flex items-center justify-between px-5 flex-1 gap-4 py-2 w-full boder-b bg-[#f5f5f5] border-b-[1px] boder-b-[#f6f6f6]">
+      <div class="shrink-0">
+        <nav aria-label="Breadcrumbs">
+          <ol class="flex flex-wrap items-center gap-2 text-sm font-book text-secondary">
+            <li
+              class="inline-flex items-center text-[#5e5e6e] gap-[inherit] last:text-primary [&amp;>[data-chevron]]:first-of-type:hidden">
+              <div data-chevron="true" class="shrink-0 text-tertiary">
+                <svg fill="none" fill-opacity="10" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                  class="shrink-0 overflow-visible stroke-[1.25] size-4" aria-hidden="true" data-icon="" data-size="sm"
+                  viewBox="0 0 20 20">
+                  <use href="#clerk-ui-icon__chevron-right-legacy"></use>
+                </svg>
+              </div>
+              <a class="hover:text-primary"
+                href="/apps/app_2iTrjto6Kszl3lrSULwGqxNK22V/instances/ins_2iTrjxkBq4rwLPt3WmHXuHAgOiH">Testing</a>
+            </li>
+            <li
+              class="inline-flex items-center gap-[inherit] last:text-primary [&amp;>[data-chevron]]:first-of-type:hidden">
+              <div data-chevron="true" class="shrink-0 text-tertiary">
+                <img src="../assets/chevron-right-svgrepo-com.svg" class="w-[15px] h-[15px]" />
+              </div>
+              Users
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="shrink-0"></div>
+    </div>
+  </div>
+  <!-- Headers -->
 
-    <div class="w-[100%] relative flex overflow-hidden">
-      <!-- sidebar -->
-      <div
-        class="hidden md:flex fixed top-[106px] h-full overflow-y-scroll left-0 z-5 md:w-[270px] lg:flex-col bg-red-800 z-10"
-      >
-        <div
-          class="flex grow flex-col h-[100vh] gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-3 py-5"
-        >
+  <div class="w-[100%] relative flex overflow-hidden">
+    <!-- sidebar -->
+    <div
+      class="hidden md:flex fixed top-[106px] h-full overflow-y-scroll left-0 z-5 md:w-[270px] lg:flex-col bg-red-800 z-10">
+      <div class="flex grow flex-col h-[100vh] gap-y-2 overflow-y-auto border-r border-gray-200 bg-white px-3 py-5">
+        <a href="./users_list.html">
           <span
-            class="group flex h-[34px] items-center justify-between rounded-md pl-3 pr-[0.9375rem] bg-gray-50 dark:text-[#2a2a2a]"
-            ><span class="flex items-center justify-between gap-2.5"
-              ><span class="text-balck"> <img src="../assets/user.svg" /> </span
-              ><span class="flex items-center gap-2 text-[14px] font-medium"
-                >Users</span
-              ></span
-            >
+            class="group flex h-[34px] items-center justify-between rounded-md pl-3 pr-[0.9375rem] bg-gray-50 dark:text-[#2a2a2a]"><span
+              class="flex items-center justify-between gap-2.5"><span class="text-balck"> <img
+                  src="../assets/user.svg" /> </span><span
+                class="flex items-center gap-2 text-[14px] font-medium">Users</span></span>
           </span>
-        </div>
-        <div
-          class="flex grow flex-col h-[100vh] gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-3 py-5"
-        >
+        </a>
+
+        <a href="./settings.html">
           <span
-            class="group flex h-[34px] items-center justify-between rounded-md pl-3 pr-[0.9375rem] bg-gray-50 dark:text-[#2a2a2a]"
-            ><span class="flex items-center justify-between gap-2.5"
-              ><span class="text-balck"> <img src="../assets/user.svg" /> </span
-              ><span class="flex items-center gap-2 text-[14px] font-medium"
-                >Users</span
-              ></span
-            >
+            class="group flex h-[34px] items-center justify-between rounded-md pl-3 pr-[0.9375rem] bg-gray-50 dark:text-[#2a2a2a]"><span
+              class="flex items-center justify-between gap-2.5"><span class="text-balck">
+                <img src="../assets/setting.svg" /> </span><span
+                class="flex items-center gap-2 text-[14px] font-medium">Settings</span></span>
           </span>
-        </div>
-        <div
-          class="flex grow flex-col h-[100vh] gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-3 py-5"
-        >
-          <a href="./settings.html">
-            <span
-              class="group flex h-[34px] items-center justify-between rounded-md pl-3 pr-[0.9375rem] bg-gray-50 dark:text-[#2a2a2a]"
-              ><span class="flex items-center justify-between gap-2.5"
-                ><span class="text-balck">
-                  <img src="../assets/setting.svg" /> </span
-                ><span class="flex items-center gap-2 text-[14px] font-medium"
-                  >Settings</span
-                ></span
-              >
-            </span>
-          </a>
-        </div>
+        </a>
+
+
       </div>
 
-      <!-- Right content section -->
-      <div
-        class="md:pl-[330px] flex relative w-full h-full overflow-y-scroll overflow-x-hidden border-l border-gray-200 md:py-12 md:pr-10"
-      >
-        <div class="flex flex-1 min-h-[800px] mt-[360px]">
-          <div class="relative w-[35%] h-[50%]">
-            <div class="fixed top-[150px] left-[330px] flex flex-col w-[23%]">
-              <div class="mt-[50px]">
-                <img
-                  src="https://dashboard.clerk.com/_next/image?url=https%3A%2F%2Fimg.clerk.com%2FeyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18yajN4RjJvZUdkcXpTbmcxT1ZqRDNWeXdTUTQiLCJyaWQiOiJ1c2VyXzJqQ2dSOTJMcmlTcVh5ajVUVE1xUFZTZ3FiVyJ9&w=3840&q=75"
-                  class="w-[80px] h-[80px] rounded-[50%]"
-                />
-              </div>
-              <div class="text-[20px]">
-                <h4>useremail@gmail.com</h4>
-                <sup class="text-[12px] text-[#aaaaaa]"
-                  >Last signed in never</sup
-                >
-              </div>
-              <div class="flex flex-col mt-[10px]">
-                <div class="flex flex-col mt-[10px] w-full">
-                  <div
-                    class="flex items-center justify-between w-full mt-[10px] h-[25px]"
-                  >
-                    <p
-                      class="relative text-[10px] p-[5px] bg-[#f5f5f5] w-[85%] rounded-lg my-5 flex"
-                    >
-                      User ID
-                      <span
-                        class="absolute top-[5px] right-[10px] w-[150px] whitespace-nowrap overflow-hidden overflow-ellipsis text-[#5e5f6e]"
-                        >app_2j3xEyyioUDeeTLuv42WZT3Y5Bn</span
-                      >
-                    </p>
-                    <button
-                      class="border border-[#aaa] rounded-md text-[12px] p-[3px] shadow-sm transition-shadow duration-300"
-                    >
-                      Copy
-                    </button>
-                  </div>
+
+    </div>
+
+    <!-- Right content section -->
+    <div
+      class="md:pl-[330px] flex relative w-full h-full overflow-y-scroll overflow-x-hidden border-l border-gray-200 md:py-12 md:pr-10">
+      <div class="flex flex-1 min-h-[800px] mt-[360px]">
+        <div class="relative w-[35%] h-[50%]">
+          <div class="fixed top-[150px] left-[330px] flex flex-col w-[23%]">
+            <div class="mt-[50px]">
+              <img
+                src="https://dashboard.clerk.com/_next/image?url=https%3A%2F%2Fimg.clerk.com%2FeyJ0eXBlIjoiZGVmYXVsdCIsImlpZCI6Imluc18yajN4RjJvZUdkcXpTbmcxT1ZqRDNWeXdTUTQiLCJyaWQiOiJ1c2VyXzJqQ2dSOTJMcmlTcVh5ajVUVE1xUFZTZ3FiVyJ9&w=3840&q=75"
+                class="w-[80px] h-[80px] rounded-[50%]" />
+            </div>
+            <div class="text-[20px]">
+              <h4>useremail@gmail.com</h4>
+              <sup class="text-[12px] text-[#aaaaaa]">Last signed in never</sup>
+            </div>
+            <div class="flex flex-col mt-[10px]">
+              <div class="flex flex-col mt-[10px] w-full">
+                <div class="flex items-center justify-between w-full mt-[10px] h-[25px]">
+                  <p class="relative text-[10px] p-[5px] bg-[#f5f5f5] w-[85%] rounded-lg my-5 flex">
+                    User ID
+                    <span
+                      class="absolute top-[5px] right-[10px] w-[150px] whitespace-nowrap overflow-hidden overflow-ellipsis text-[#5e5f6e]">app_2j3xEyyioUDeeTLuv42WZT3Y5Bn</span>
+                  </p>
+                  <button
+                    class="border border-[#aaa] rounded-md text-[12px] p-[3px] shadow-sm transition-shadow duration-300">
+                    Copy
+                  </button>
                 </div>
               </div>
-              <div class="flex flex-col mt-[20px] text-base">
-                <div
-                  class="flex items-center py-2 border-b border-gray-200 w-full"
-                >
-                  <img
-                    src="../assets/user.svg"
-                    class="w-[20px] h-[20px] pr-[5px]"
-                  />
-                  <p class="text-[12px]">Impersonate User</p>
-                </div>
-                <div
-                  class="flex items-center py-2 border-b border-gray-200 w-full"
-                >
-                  <img
-                    src="../assets/lock.svg"
-                    class="w-[20px] h-[20px] pr-[5px]"
-                  />
-                  <p class="text-[12px]">Change Password</p>
-                </div>
-                <div
-                  class="flex items-center text-red-500 py-2 border-b border-gray-200 w-full"
-                >
-                  <img
-                    src="../assets/block.svg"
-                    class="w-[20px] h-[20px] pr-[5px]"
-                  />
-                  <p class="text-[12px]">Ban User</p>
-                </div>
-                <div
-                  class="flex items-center text-red-500 py-2 border-b border-gray-200 w-full"
-                >
-                  <img
-                    src="../assets/trash.svg"
-                    class="w-[20px] h-[20px] pr-[5px]"
-                  />
-                  <p class="text-[12px]">Delete User</p>
-                </div>
+            </div>
+            <div class="flex flex-col mt-[20px] text-base">
+              <div class="flex items-center py-2 border-b border-gray-200 w-full">
+                <img src="../assets/user.svg" class="w-[20px] h-[20px] pr-[5px]" />
+                <p class="text-[12px]">Impersonate User</p>
               </div>
-              <div class="py-[10px] text-[10px] font-light text-[#5e5f6e]">
-                Joined on
-                <b class="py-2 font-bold text-black">July 10, 2024</b>
+              <div class="flex items-center py-2 border-b border-gray-200 w-full">
+                <img src="../assets/lock.svg" class="w-[20px] h-[20px] pr-[5px]" />
+                <p class="text-[12px]">Change Password</p>
+              </div>
+              <div class="flex items-center text-red-500 py-2 border-b border-gray-200 w-full">
+                <img src="../assets/block.svg" class="w-[20px] h-[20px] pr-[5px]" />
+                <p class="text-[12px]">Ban User</p>
+              </div>
+              <div class="flex items-center text-red-500 py-2 border-b border-gray-200 w-full">
+                <img src="../assets/trash.svg" class="w-[20px] h-[20px] pr-[5px]" />
+                <p class="text-[12px]">Delete User</p>
+              </div>
+            </div>
+            <div class="py-[10px] text-[10px] font-light text-[#5e5f6e]">
+              Joined on
+              <b class="py-2 font-bold text-black">July 10, 2024</b>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col justify-center w-[65%] h-[50%]">
+          <div class="relative flex flex-col items-center w-full py-[10px] bg-[#f7f7f8] rounded-[10px] my-[10px]">
+            <h3 class="text-left text-base w-full pt-4 pl-4 h-10">
+              Basic Information
+            </h3>
+            <p class="text-left text-[#5e5f6e] w-full text-[12px] pl-[15px] h-[30px]">
+              Manage user profile
+            </p>
+            <div class="w-[98%] bg-[#fff] border border-b-0.5 border-[#dedede] rounded-tl-[10px] rounded-tr-[10px]">
+              <h3 class="text-[15px] pt-[15px] pl-[15px]">Email Address</h3>
+              <p class="text-[#5e5f6e] text-[14px] pt-[10px] pl-[15px]">
+                useremail@gmail.com
+              </p>
+              <div class="flex justify-between w-full pb-4">
+                <div class="flex items-center">
+                  <img src="../assets/check.svg" class="pl-[10px]" />
+                  <p class="text-[10px] text-[#aaa]">Verified</p>
+                </div>
+                <button class="rounded-[20px] bg-[#ddd] text-[10px] mr-[15px] text-[#383838] py-1 px-[10px]">
+                  Primary
+                </button>
+              </div>
+            </div>
+            <div class="w-[98%] bg-[#fff] border border-t-0 border-[#dedede] rounded-bl-[10px] rounded-br-[10px]">
+              <h3 class="text-[15px] pt-[35px] pl-[15px] pb-2">
+                Phone numbers
+              </h3>
+              <div class="flex justify-center w-full">
+                <button class="rounded-lg bg-gray-25 py-2 text-center text-sm bg-[#f5f4f2] mb-[10px] w-[96%]"
+                  colspan="2">
+                  None
+                </button>
+              </div>
+              <h3 class="text-[15px] pt-[35px] pl-[15px] pb-2">
+                Social accounts
+              </h3>
+              <div class="flex justify-center w-full">
+                <button class="rounded-lg bg-gray-25 py-2 text-center text-sm bg-[#f5f4f2] mb-[10px] w-[96%]"
+                  colspan="2">
+                  None
+                </button>
+              </div>
+              <h3 class="text-[15px] pt-[35px] pl-[15px] pb-2">
+                Web3 wallets
+              </h3>
+              <div class="flex justify-center w-full">
+                <button class="rounded-lg bg-gray-25 py-2 text-center text-sm bg-[#f5f4f2] mb-[10px] w-[96%]"
+                  colspan="2">
+                  None
+                </button>
+              </div>
+              <h3 class="text-[15px] pt-[35px] pl-[15px] pb-2">
+                Enterprise accounts
+              </h3>
+              <div class="flex justify-center w-full">
+                <button class="rounded-lg bg-gray-25 py-2 text-center text-sm bg-[#f5f4f2] mb-[10px] w-[96%]"
+                  colspan="2">
+                  None
+                </button>
               </div>
             </div>
           </div>
-          <div class="flex flex-col justify-center w-[65%] h-[50%]">
-            <div
-              class="relative flex flex-col items-center w-full py-[10px] bg-[#f7f7f8] rounded-[10px] my-[10px]"
-            >
-              <h3 class="text-left text-base w-full pt-4 pl-4 h-10">
-                Basic Information
-              </h3>
-              <p
-                class="text-left text-[#5e5f6e] w-full text-[12px] pl-[15px] h-[30px]"
-              >
-                Manage user profile
-              </p>
-              <div
-                class="w-[98%] bg-[#fff] border border-b-0.5 border-[#dedede] rounded-tl-[10px] rounded-tr-[10px]"
-              >
-                <h3 class="text-[15px] pt-[15px] pl-[15px]">Email Address</h3>
-                <p class="text-[#5e5f6e] text-[14px] pt-[10px] pl-[15px]">
-                  useremail@gmail.com
-                </p>
-                <div class="flex justify-between w-full pb-4">
-                  <div class="flex items-center">
-                    <img src="../assets/check.svg" class="pl-[10px]" />
-                    <p class="text-[10px] text-[#aaa]">Verified</p>
-                  </div>
-                  <button
-                    class="rounded-[20px] bg-[#ddd] text-[10px] mr-[15px] text-[#383838] py-1 px-[10px]"
-                  >
-                    Primary
-                  </button>
-                </div>
-              </div>
-              <div
-                class="w-[98%] bg-[#fff] border border-t-0 border-[#dedede] rounded-bl-[10px] rounded-br-[10px]"
-              >
-                <h3 class="text-[15px] pt-[35px] pl-[15px] pb-2">
-                  Phone numbers
-                </h3>
-                <div class="flex justify-center w-full">
-                  <button
-                    class="rounded-lg bg-gray-25 py-2 text-center text-sm bg-[#f5f4f2] mb-[10px] w-[96%]"
-                    colspan="2"
-                  >
-                    None
-                  </button>
-                </div>
-                <h3 class="text-[15px] pt-[35px] pl-[15px] pb-2">
-                  Social accounts
-                </h3>
-                <div class="flex justify-center w-full">
-                  <button
-                    class="rounded-lg bg-gray-25 py-2 text-center text-sm bg-[#f5f4f2] mb-[10px] w-[96%]"
-                    colspan="2"
-                  >
-                    None
-                  </button>
-                </div>
-                <h3 class="text-[15px] pt-[35px] pl-[15px] pb-2">
-                  Web3 wallets
-                </h3>
-                <div class="flex justify-center w-full">
-                  <button
-                    class="rounded-lg bg-gray-25 py-2 text-center text-sm bg-[#f5f4f2] mb-[10px] w-[96%]"
-                    colspan="2"
-                  >
-                    None
-                  </button>
-                </div>
-                <h3 class="text-[15px] pt-[35px] pl-[15px] pb-2">
-                  Enterprise accounts
-                </h3>
-                <div class="flex justify-center w-full">
-                  <button
-                    class="rounded-lg bg-gray-25 py-2 text-center text-sm bg-[#f5f4f2] mb-[10px] w-[96%]"
-                    colspan="2"
-                  >
-                    None
-                  </button>
-                </div>
-              </div>
-            </div>
-            <!-- ! -->
-            <div
-              class="relative flex flex-col items-center w-full py-[10px] bg-[#f7f7f8] br-[10px] my-[20px] rounded-[10px]"
-            >
+          <!-- ! -->
+          <div
+            class="relative flex flex-col items-center w-full py-[10px] bg-[#f7f7f8] br-[10px] my-[20px] rounded-[10px]">
+            <h3 class="text-left text-[15px] w-full pt-[15px] pl-[15px]">
+              Personal information
+            </h3>
+            <p class="text-left text-[#5e5f6e] w-full text-[12px] pl-[15px] h-[30px]">
+              Manage personal information settings
+            </p>
+            <div class="w-[98%] bg-[#fff] border border-b-0.5 border-[#dedede] rounded-tl-[10px] rounded-tr-[10px]">
               <h3 class="text-left text-[15px] w-full pt-[15px] pl-[15px]">
-                Personal information
+                First Name
               </h3>
-              <p
-                class="text-left text-[#5e5f6e] w-full text-[12px] pl-[15px] h-[30px]"
-              >
-                Manage personal information settings
-              </p>
-              <div
-                class="w-[98%] bg-[#fff] border border-b-0.5 border-[#dedede] rounded-tl-[10px] rounded-tr-[10px]"
-              >
-                <h3 class="text-left text-[15px] w-full pt-[15px] pl-[15px]">
-                  First Name
-                </h3>
-                <input
-                  type="text"
-                  placeholder="First Name"
-                  class="p-[7px] border border-[#dedede] rounded-md mt-[10px] mr-[15px] mb-[15px] ml-[15px] w-[90%] text-[13px] outline-none"
-                />
-                <h3 class="text-left text-[15px] w-full pt-[15px] pl-[15px]">
-                  Last Name
-                </h3>
-                <input
-                  type="text"
-                  placeholder="Last Name"
-                  class="p-[7px] border border-[#dedede] rounded-md mt-[10px] mr-[15px] mb-[15px] ml-[15px] w-[90%] text-[13px] outline-none"
-                />
-              </div>
-              <div
-                class="w-[98%] bg-white border boder-t-0 border-[#dedede] py-[10px]"
-              >
-                <h3 class="text-left text-[15px] w-full pt-[15px] pl-[15px]">
-                  User Permissions
-                </h3>
-                <p
-                  class="text-left text-[#5e5f6e] w-full text-[12px] pl-[15px] h-[30px]"
-                >
-                  Define the permissions for this user. This overrides the
-                  default permissions as defined in User Settings.
-                </p>
-              </div>
-              <div
-                class="flex w-[98%] bg-[#fff] border border-t-0 border-b-0 border-[#dedede]"
-              >
-                <div class="pl-[15px] pt-[15px]">
-                  <label for="toggle" class="flex items-center cursor-pointer">
-                    <div class="relative">
-                      <input id="toggle" type="checkbox" class="sr-only" />
-                      <div class="block bg-[#000] w-8 h-4 rounded-full"></div>
-                      <div
-                        class="dot absolute left-0.5 top-0.5 bg-white w-3 h-3 rounded-full transition"
-                      ></div>
-                    </div>
-                  </label>
-                </div>
-                <div class="flex flex-col">
-                  <h3 class="text-[15px] pt-[10px] pr-[15px] pl-[15px]">
-                    Allow user to delete their account
-                  </h3>
-                  <p
-                    class="text-[#5e5f6e] text-[12px] font-light pl-[15px] w-full mb-[10px]"
-                  >
-                    If checked, this user will be signed out of all their
-                    devices.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="flex w-[98%] bg-[#fff] border border-t-0 border-[#dedede] rounded-bl-[10px] rounded-br-[10px]"
-              >
-                <div class="pl-[15px] pt-[15px]">
-                  <label for="toggle" class="flex items-center cursor-pointer">
-                    <div class="relative">
-                      <input id="toggle" type="checkbox" class="sr-only" />
-                      <div class="block bg-[#000] w-8 h-4 rounded-full"></div>
-                      <div
-                        class="dot absolute left-0.5 top-0.5 bg-white w-3 h-3 rounded-full transition"
-                      ></div>
-                    </div>
-                  </label>
-                </div>
-                <div class="flex flex-col">
-                  <h3 class="text-[15px] pt-[10px] pr-[15px] pl-[15px]">
-                    Allow user to create organizations
-                  </h3>
-                  <p
-                    class="text-[#5e5f6e] text-[12px] font-light pl-[15px] w-full mb-[10px]"
-                  >
-                    Cannot be enabled because organizations are not enabled for
-                    this application.
-                    <a class="underline" href="./settings.html"
-                      >Go to Organization Settings</a
-                    >
-                  </p>
-                </div>
-              </div>
+              <input type="text" placeholder="First Name"
+                class="p-[7px] border border-[#dedede] rounded-md mt-[10px] mr-[15px] mb-[15px] ml-[15px] w-[90%] text-[13px] outline-none" />
+              <h3 class="text-left text-[15px] w-full pt-[15px] pl-[15px]">
+                Last Name
+              </h3>
+              <input type="text" placeholder="Last Name"
+                class="p-[7px] border border-[#dedede] rounded-md mt-[10px] mr-[15px] mb-[15px] ml-[15px] w-[90%] text-[13px] outline-none" />
             </div>
-            <div
-              class="relative flex flex-col items-center w-full py-[10px] bg-[#f7f7f8] br-[10px] my-[20px] rounded-[10px]"
-            >
-              <div class="radio pl-[15px] absolute top-[30px] right-[20px]">
+            <div class="w-[98%] bg-white border boder-t-0 border-[#dedede] py-[10px]">
+              <h3 class="text-left text-[15px] w-full pt-[15px] pl-[15px]">
+                User Permissions
+              </h3>
+              <p class="text-left text-[#5e5f6e] w-full text-[12px] pl-[15px] h-[30px]">
+                Define the permissions for this user. This overrides the
+                default permissions as defined in User Settings.
+              </p>
+            </div>
+            <div class="flex w-[98%] bg-[#fff] border border-t-0 border-b-0 border-[#dedede]">
+              <div class="pl-[15px] pt-[15px]">
                 <label for="toggle" class="flex items-center cursor-pointer">
                   <div class="relative">
                     <input id="toggle" type="checkbox" class="sr-only" />
-                    <div class="block bg-purple-600 w-8 h-4 rounded-full"></div>
-                    <div
-                      class="dot absolute left-0.5 top-0.5 bg-white w-3 h-3 rounded-full transition"
-                    ></div>
+                    <div class="block bg-[#000] w-8 h-4 rounded-full"></div>
+                    <div class="dot absolute left-0.5 top-0.5 bg-white w-3 h-3 rounded-full transition"></div>
                   </div>
                 </label>
               </div>
-              <h3
-                class="text-left text-[#5e5f6e] w-full text-[15px] pl-[15px] h-[25px]"
-              >
-                Test mode
-              </h3>
-              <p
-                class="text-left text-[#5e5f6e] w-full text-[12px] pl-[15px] h-[30px]"
-              >
-                Sign in and sign up with test credentials.
-                <a href="#" class="font-medium text-[#9400FF]"> Learn more </a>
-              </p>
-              <div
-                class="w-[98%] bg-[#fff] border border-b-0.5 border-[#dedede] rounded-[10px]"
-              >
-                <h3 class="text-[15px] pt-[15px] pl-[15px] pr-[15px]">
-                  Test email:
-                  <span
-                    class="relative rounded-sm bg-surface-100 px-1.5 py-0.5 font-mono text-xs text-tertiary before:pointer-events-none before:absolute before:inset-0 before:z-10 before:rounded-sm before:bg-gradient-to-b before:from-transparent before:to-gray-950 before:opacity-5 before:shadow-inner before:shadow-black"
-                    >your_email+clerk_test@example.com</span
-                  >
+              <div class="flex flex-col">
+                <h3 class="text-[15px] pt-[10px] pr-[15px] pl-[15px]">
+                  Allow user to delete their account
                 </h3>
-                <p
-                  class="text-[#5e5f6e] text-[12px] font-light pl-[15px] w-[80%]"
-                >
-                  Any email with the +clerk_test subaddress is a test email
-                  address.
-                </p>
-                <h3 class="text-[15px] pt-[15px] pl-[15px] pr-[15px]">
-                  Test verification code:
-                  <span
-                    class="relative rounded-sm bg-surface-100 px-1.5 py-0.5 font-mono text-xs text-tertiary before:pointer-events-none before:absolute before:inset-0 before:z-10 before:rounded-sm before:bg-gradient-to-b before:from-transparent before:to-gray-950 before:opacity-5 before:shadow-inner before:shadow-black"
-                    >424242</span
-                  >
-                </h3>
-                <p
-                  class="text-[#5e5f6e] text-[12px] font-light pl-[15px] w-[80%]"
-                >
-                  No verification emails or SMS will be sent from test emails or
-                  test phone numbers. They can be verified with this code.
-                </p>
-                <h3 class="text-[15px] pt-[15px] pl-[15px] pr-[15px]">
-                  Test phone number:
-                  <span
-                    class="relative rounded-sm bg-surface-100 px-1.5 py-0.5 font-mono text-xs text-tertiary before:pointer-events-none before:absolute before:inset-0 before:z-10 before:rounded-sm before:bg-gradient-to-b before:from-transparent before:to-gray-950 before:opacity-5 before:shadow-inner before:shadow-black"
-                    >+15555550100</span
-                  >
-                </h3>
-                <p
-                  class="text-[#5e5f6e] text-[12px] font-light pl-[15px] w-[80%] mb-[10px]"
-                >
-                  The last three digits of this test phone number can end with a
-                  number between 100-199.
+                <p class="text-[#5e5f6e] text-[12px] font-light pl-[15px] w-full mb-[10px]">
+                  If checked, this user will be signed out of all their
+                  devices.
                 </p>
               </div>
+            </div>
+            <div class="flex w-[98%] bg-[#fff] border border-t-0 border-[#dedede] rounded-bl-[10px] rounded-br-[10px]">
+              <div class="pl-[15px] pt-[15px]">
+                <label for="toggle" class="flex items-center cursor-pointer">
+                  <div class="relative">
+                    <input id="toggle" type="checkbox" class="sr-only" />
+                    <div class="block bg-[#000] w-8 h-4 rounded-full"></div>
+                    <div class="dot absolute left-0.5 top-0.5 bg-white w-3 h-3 rounded-full transition"></div>
+                  </div>
+                </label>
+              </div>
+              <div class="flex flex-col">
+                <h3 class="text-[15px] pt-[10px] pr-[15px] pl-[15px]">
+                  Allow user to create organizations
+                </h3>
+                <p class="text-[#5e5f6e] text-[12px] font-light pl-[15px] w-full mb-[10px]">
+                  Cannot be enabled because organizations are not enabled for
+                  this application.
+                  <a class="underline" href="./settings.html">Go to Organization Settings</a>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="relative flex flex-col items-center w-full py-[10px] bg-[#f7f7f8] br-[10px] my-[20px] rounded-[10px]">
+            <div class="radio pl-[15px] absolute top-[30px] right-[20px]">
+              <label for="toggle" class="flex items-center cursor-pointer">
+                <div class="relative">
+                  <input id="toggle" type="checkbox" class="sr-only" />
+                  <div class="block bg-purple-600 w-8 h-4 rounded-full"></div>
+                  <div class="dot absolute left-0.5 top-0.5 bg-white w-3 h-3 rounded-full transition"></div>
+                </div>
+              </label>
+            </div>
+            <h3 class="text-left text-[#5e5f6e] w-full text-[15px] pl-[15px] h-[25px]">
+              Test mode
+            </h3>
+            <p class="text-left text-[#5e5f6e] w-full text-[12px] pl-[15px] h-[30px]">
+              Sign in and sign up with test credentials.
+              <a href="#" class="font-medium text-[#9400FF]"> Learn more </a>
+            </p>
+            <div class="w-[98%] bg-[#fff] border border-b-0.5 border-[#dedede] rounded-[10px]">
+              <h3 class="text-[15px] pt-[15px] pl-[15px] pr-[15px]">
+                Test email:
+                <span
+                  class="relative rounded-sm bg-surface-100 px-1.5 py-0.5 font-mono text-xs text-tertiary before:pointer-events-none before:absolute before:inset-0 before:z-10 before:rounded-sm before:bg-gradient-to-b before:from-transparent before:to-gray-950 before:opacity-5 before:shadow-inner before:shadow-black">your_email+clerk_test@example.com</span>
+              </h3>
+              <p class="text-[#5e5f6e] text-[12px] font-light pl-[15px] w-[80%]">
+                Any email with the +clerk_test subaddress is a test email
+                address.
+              </p>
+              <h3 class="text-[15px] pt-[15px] pl-[15px] pr-[15px]">
+                Test verification code:
+                <span
+                  class="relative rounded-sm bg-surface-100 px-1.5 py-0.5 font-mono text-xs text-tertiary before:pointer-events-none before:absolute before:inset-0 before:z-10 before:rounded-sm before:bg-gradient-to-b before:from-transparent before:to-gray-950 before:opacity-5 before:shadow-inner before:shadow-black">424242</span>
+              </h3>
+              <p class="text-[#5e5f6e] text-[12px] font-light pl-[15px] w-[80%]">
+                No verification emails or SMS will be sent from test emails or
+                test phone numbers. They can be verified with this code.
+              </p>
+              <h3 class="text-[15px] pt-[15px] pl-[15px] pr-[15px]">
+                Test phone number:
+                <span
+                  class="relative rounded-sm bg-surface-100 px-1.5 py-0.5 font-mono text-xs text-tertiary before:pointer-events-none before:absolute before:inset-0 before:z-10 before:rounded-sm before:bg-gradient-to-b before:from-transparent before:to-gray-950 before:opacity-5 before:shadow-inner before:shadow-black">+15555550100</span>
+              </h3>
+              <p class="text-[#5e5f6e] text-[12px] font-light pl-[15px] w-[80%] mb-[10px]">
+                The last three digits of this test phone number can end with a
+                number between 100-199.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
